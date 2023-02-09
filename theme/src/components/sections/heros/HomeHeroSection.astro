@@ -9,6 +9,7 @@ import Button from './Button.astro';
 <Container>
 	<section class="hero-section__section">
 		<div class="hero-section__text">
+				<div class="hero-section__flag">Buoyant is a starter template by Greyscale</div>
 				<h1>Welcome to <span style="display: flex"> Buoyant <span style="font-size: 0.6em; align-self: flex-start;">&copy;</span></span></h1>
 				<p>
 					A marketing website theme built with <span style="color: var(--astro-purple); font-weight:600">Astro.js</span>
@@ -39,13 +40,48 @@ import Button from './Button.astro';
 </Container>
 
 <style>
+	.hero-section__flag {
+		position: relative;
+		text-align: center;
+		font-size: 0.8em;
+		color: var(--theme-color-secondary);
+		display: block;
+		max-width: 17rem;
+		margin-bottom: 0.5rem;
+
+	}
+	.hero-section__flag:before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		display: inline-block;
+		top:0;
+		left: -0.2rem;
+		width: calc(100%);
+		height: 100%;
+		width: 110%;
+		background-color: var(--theme-surface-2);
+		border-radius: 0 1rem 1rem 0;
+	}
+	.hero-section__flag:after {
+		content: "";
+		position: absolute;
+		display: block;
+		z-index: 10;
+		width: 100%;
+		border-left: 5px solid black;
+		height: 100%;
+		left: -0.2rem;
+		right: 100%;
+		top: 0;
+	}
 	.hero-section__section {
 		margin: var(--section-margin) auto;
 		min-height: clamp(90vh, 100vw, calc(100vh - var(--navbar-height)));
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		align-items: center;
-		gap: 1rem;
+		gap: 3rem;
 	}
 	.hero-section__text {
 		justify-self: center;
