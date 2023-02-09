@@ -1,0 +1,72 @@
+---
+import Container from '../components/core/Container.astro'
+import FeatureCard from '../components/cards/FeatureCard.astro'
+
+import Layout from '../layouts/Page.astro';
+import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
+---
+
+<Layout>
+	<HomeHeroSection />
+	<Container>
+		<section class="feature-card__section">
+			<h2>Splash and squeeze Pages</h2>
+			<p>
+				With ready to go web pages that introduce people to your business, your product, and your brand.
+			</p>
+			<div class="feature-card__grid">
+				<FeatureCard href="/landing-pages/landing-1" title="Landing Page" imgSrc="/assets/images/home/screenshots/buoyant-dark-landing">
+				</FeatureCard>
+				<FeatureCard href="/landing-pages/landing-2" title="Splash Page" imgSrc="/assets/images/home/screenshots/buoyant-dark-splash">
+				</FeatureCard>
+			</div>
+		</section>
+	</Container>
+
+	<Container>
+		<section class="feature-card__section">
+			<h2>Business Pages</h2>
+			<p>
+				Buoyant ships as a full marketing website with everything your audience needs to build trust, engage with your offering and contact you about your services.
+			</p>
+			<p style="font-size: 0.8em; font-style: italic; font-weight: 200;">(Blog functionality optional)</p>
+			<div class="feature-card__grid">
+				<FeatureCard href="/company/about" title="About Page" imgSrc="/assets/images/home/screenshots/buoyant-dark-about">
+				</FeatureCard>
+				<FeatureCard href="/company/contact" title="Contact Page" imgSrc="/assets/images/home/screenshots/buoyant-dark-contact">
+				</FeatureCard>
+				<FeatureCard href="/blog/" title="Blog Page" imgSrc="/assets/images/home/screenshots/buoyant-dark-blog">
+				</FeatureCard>
+				<FeatureCard
+					href="/blog/posts/remote-work-mental-health"
+					title="Blog Post"
+          imgSrc="/assets/images/home/screenshots/buoyant-dark-post"
+				>
+				</FeatureCard>
+				<FeatureCard
+					href="/company/legal"
+					imgSrc="/assets/images/home/screenshots/buoyant-dark-legal"
+					title="Legal Page"
+				>
+				</FeatureCard>
+			</div>
+		</section>
+	</Container>
+
+</Layout>
+
+<style>
+	.feature-card__section {
+		margin: var(--section-margin) auto;
+	}
+	.feature-card__grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--theme-grid-gap);
+	}
+	@media (max-width: 768px) {
+		.feature-card__grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

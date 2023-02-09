@@ -1,0 +1,108 @@
+---
+import {Icon} from 'astro-icon'
+import AnnouncementBar from '../../components/core/AnnouncementBar.astro'
+import CustomerQuoteSection from '../../components/sections/CustomerQuoteSection.astro'
+import ThreeColumnTextSection from '../../components/sections/ThreeColumnTextSection.astro'
+import YouTubeEmbedSection from '../../components/sections/YouTubeEmbedSection.astro'
+import StickyTextImageSection from '../../components/sections/StickyTextImageSection.astro'
+import CtaCardSection from '../../components/sections/CtaCardSection.astro'
+import Button from '../../components/buttons/Button.astro'
+
+import Layout from '../../layouts/Page.astro';
+import TextAndImageHero from '../../components/sections/heros/TextAndImageHero.astro';
+
+const seo = {
+	title: 'Landing Page #1 | Astro Odyssey Theme',
+	description: 'Landing Page #1 | Astro Odyssey Theme',
+};
+---
+
+<AnnouncementBar text="Read Our Latest Blog Post" href="/blog/posts/remote-work-mental-health/" slot="announcement-bar"/>
+<Layout seo={seo} >
+	<TextAndImageHero reversed>
+		<div slot="text-container">
+			<h1>Empowering & <span style="display: flex"> Buoyant <span style="font-size: 0.6em; align-self: flex-start;">&copy;</span></span></h1>
+			<p>Use Buoyant to elevate your impact and serve more people.</p>
+		</div>
+		<div slot="btns-container">
+			<Button href="/company/contact" customIcon
+				>Get Started <Fragment slot="icon">
+          <Icon name="ic:baseline-chevron-right"/>
+        </Fragment></Button
+			>
+		</div>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/landing-1/landing-hero-1.jpg"
+				alt="Astro Odyssee"
+				id="home-hero-image"
+			/>
+		</picture>
+	</TextAndImageHero>
+
+	<CustomerQuoteSection
+		quoteText="Example testimonial: [You] are a great person to work with. You are very responsive, compassionate, and have a great attitude towards life. I would recommend [you] to anyone."
+		customerName="Client or Student"
+	/>
+
+	<ThreeColumnTextSection>
+		<div slot="column-1-body">
+			<h2>Why?</h2>
+			<p>
+				Therapy offers numerous benefits for promoting positive psychology, including increased happiness, reduced stress and anxiety, and improved relationships. Through therapy, individuals can gain self-awareness, challenge negative thought patterns, and learn new skills for leading a fulfilling life..
+			</p>
+		</div>
+		<Button slot="column-1-cta">Learn More</Button>
+		<div slot="column-2-body">
+			<h2>How?</h2>
+			<p>
+				Starting therapy is a brave and important step towards personal growth and well-being. Simply reach out to your therapist to schedule an initial appointment. During this session, you'll discuss your goals and concerns, and begin working together to develop a personalized plan for your therapy journey.
+			</p>
+		</div>
+		<Button slot="column-2-cta" outlined>Learn More</Button>
+		<div slot="column-3-body">
+			<h2>What?</h2>
+			<p>
+				Therapy sessions are a safe and confidential space. You and your therapist will discuss your goals, progress, and any challenges you may be facing. Your therapist will use various therapeutic techniques to help you work through difficult experiences and achieve your therapeutic goals.
+			</p>
+		</div>
+		<Button slot="column-3-cta">Learn More</Button>
+	</ThreeColumnTextSection>
+
+	<YouTubeEmbedSection url="https://www.youtube.com/watch?v=dm2rdO7hAfI&pp=ygUZc2Nob29sIG9mIGxpZmUgZGVwcmVzc2lvbg%3D%3D" rounded />
+
+  <StickyTextImageSection>
+    <div slot="text-container">
+      <h2>Online [fill in your package name]</h2>
+      <h3>Details</h3>
+      <p>
+        Our online coaching program is designed to help you build confidence and achieve self-actualization. With personalized one-on-one sessions, customized exercises and activities, and ongoing support, you'll develop the skills and mindset needed to achieve your full potential. Our program is convenient, flexible, and accessible, so you can start boosting your confidence and living your best life today.
+      </p>
+      <h3>Responsive</h3>
+        <p>
+		Don't let self-doubt hold you back any longer. Invest in yourself and your future with our online coaching program. With personalized support and guidance, you'll develop the confidence and self-awareness you need to achieve your dreams and live your best life. Don't wait, take control of your future and make the decision to join our program today.
+      </p>
+      <h3>Your ideal future awaits</h3>
+        <p>
+			Ready to transform your life and reach new heights of confidence and self-actualization? Click now to enroll in our online coaching program and start your journey to a better you today.
+      </p>
+    </div>
+     <picture slot="image-container">
+      <img
+        src="/assets/images/landing-1/landing-sticky.jpg"
+        alt="Astro Odyssey"
+        loading="lazy"
+      />
+    </picture>
+  </StickyTextImageSection>
+
+  <CtaCardSection background="var(--theme-surface-2)" color="var(--theme-on-surface-2)">
+    <h2>Start Your Journey Today</h2>
+    Lorem ipsum dolor. Ipsum amet laboriosam reprehenderit id tempora officiis?
+    <Button href="/company/contact" customIcon>Get Started <Fragment slot="icon">
+      <Icon name="ic:baseline-chevron-right"/>
+    </Fragment></Button>
+  </CtaCardSection>
+
+</Layout>
+
